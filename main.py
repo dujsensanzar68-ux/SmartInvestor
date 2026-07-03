@@ -55,6 +55,14 @@ with tab1:
 
     chart_type = st.sidebar.radio("Chart Type:", ["Line", "Candlestick", "Bar"])
 
+    # Easter Egg / Harmless Prank
+    if ticker == "NVDA":
+        st.balloons()
+        st.toast("🚀 NVDA is flying to the moon!")
+    elif ticker == "TSLA":
+        st.snow()
+        st.toast("❄️ Chilling out with TSLA...")
+
     tick_obj = yf.Ticker(ticker)
     df = tick_obj.history(period="6mo")
 
